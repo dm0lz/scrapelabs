@@ -1,0 +1,1368 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  .bg-mesh-gradient {
+    background-image: radial-gradient(at 40% 20%, hsla(28,100%,74%,0.25) 0px, transparent 50%), 
+                      radial-gradient(at 80% 0%, hsla(189,100%,56%,0.25) 0px, transparent 50%), 
+                      radial-gradient(at 0% 50%, hsla(355,100%,93%,0.25) 0px, transparent 50%), 
+                      radial-gradient(at 80% 50%, hsla(340,100%,76%,0.25) 0px, transparent 50%), 
+                      radial-gradient(at 0% 100%, hsla(22,100%,77%,0.25) 0px, transparent 50%), 
+                      radial-gradient(at 80% 100%, hsla(242,100%,70%,0.25) 0px, transparent 50%), 
+                      radial-gradient(at 0% 0%, hsla(343,100%,76%,0.25) 0px, transparent 50%);
+  }
+  
+  .glass-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+  }
+  
+  .glass-card:hover {
+    background: rgba(255, 255, 255, 0.15);
+  }
+
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+  }
+
+  .faq-item.active .faq-answer {
+    max-height: 500px;
+  }
+
+  .faq-item.active .faq-icon {
+    transform: rotate(180deg);
+  }
+</style>
+<body class="font-sans text-gray-800 overflow-x-hidden">
+<!-- Header -->
+<header class="fixed w-full z-50 transition-all duration-300">
+  <div class="container mx-auto px-4 md:px-6">
+    <div class="flex justify-between items-center h-20">
+      <a href="#" class="flex items-center group">
+        <div class="p-2 rounded-xl transition-all duration-300 group-hover:scale-110">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-primary-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 20V8a2 2 0 0 0-2-2h-7.93a2 2 0 0 1-1.66-.9l-.82-1.2A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13c0 1.1.9 2 2 2h16a2 2 0 0 0 2-2Z"/>
+            <path d="M2 10h20"/>
+          </svg>
+        </div>
+        <span class="text-2xl font-bold ml-2 text-white">ScrapeLabs</span>
+      </a>
+      
+      <nav class="hidden md:flex items-center space-x-8">
+        <a href="#use-cases" class="font-medium transition-all duration-300 text-gray-300 hover:text-primary-400">
+          Use Cases
+        </a>
+        <a href="#pricing" class="font-medium transition-all duration-300 text-gray-300 hover:text-primary-400">
+          Pricing
+        </a>
+        <a href="#faq" class="font-medium transition-all duration-300 text-gray-300 hover:text-primary-400">
+          FAQ
+        </a>
+        <a href="#order" class="bg-accent-500 hover:bg-accent-600 text-white px-6 py-2.5 rounded-xl font-medium transition-all hover:scale-105 hover:shadow-glow flex items-center">
+          Get Your Data
+          <svg class="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+          </svg>
+        </a>
+      </nav>
+      
+      <button class="md:hidden text-white focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+
+<main>
+  <!-- Hero Section -->
+  <section class="relative min-h-screen pt-32 pb-20 overflow-hidden bg-gradient-to-b from-gray-950 to-gray-900">
+    <div class="absolute inset-0 bg-mesh-gradient opacity-20"></div>
+    
+    <div class="container relative mx-auto px-4 md:px-6">
+      <div class="max-w-5xl mx-auto text-center">
+        <div class="inline-block animate-float mb-8">
+          <span class="px-6 py-2 rounded-full glass-card text-white/90 text-sm font-medium inline-flex items-center gap-2 shadow-glow">
+            <span class="w-2 h-2 rounded-full bg-accent-400 animate-pulse"></span>
+            Professional Web Scraping Services
+            <span class="px-2 py-0.5 text-xs bg-white/10 rounded-full">New: AI-Powered Extraction</span>
+          </span>
+        </div>
+        
+        <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold mb-8 leading-tight text-white animate-slide-up">
+          Transform Web Data Into
+          <span class="block mt-4 bg-gradient-to-r from-primary-400 to-secondary-400 bg-clip-text text-transparent">
+            Actionable Insights
+          </span>
+        </h1>
+        
+        <p class="text-xl md:text-2xl mb-12 text-gray-300 max-w-3xl mx-auto leading-relaxed animate-slide-up opacity-90">
+          Stop struggling with data collection. Our expert team handles the complex 
+          extraction process while you focus on what truly matters — growing your business.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row justify-center gap-6 mb-20 animate-slide-up">
+          <a href="#order" class="group bg-accent-500 hover:bg-accent-600 text-white px-8 py-4 rounded-xl font-medium text-lg transition-all transform hover:scale-105 hover:shadow-glow flex items-center justify-center">
+            Start Your Data Project
+            <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+          <a href="#use-cases" class="glass-card px-8 py-4 text-white font-medium text-lg flex items-center justify-center group rounded-xl">
+            Explore Solutions
+            <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 h-5 w-5 group-hover:translate-y-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 9l6 6 6-6"/>
+            </svg>
+          </a>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div class="glass-card p-8 animate-slide-up delay-300 group hover:scale-105 transition-transform rounded-xl">
+            <div class="flex justify-center mb-6">
+              <div class="p-3 rounded-full bg-accent-500/20 group-hover:scale-110 transition-transform">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-accent-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 20V8a2 2 0 0 0-2-2h-7.93a2 2 0 0 1-1.66-.9l-.82-1.2A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13c0 1.1.9 2 2 2h16a2 2 0 0 0 2-2Z"/>
+                  <path d="M2 10h20"/>
+                </svg>
+              </div>
+            </div>
+            <h3 class="font-semibold text-xl mb-3 text-white">Custom Extraction</h3>
+            <p class="text-gray-300 leading-relaxed">
+              Tailored scraping solutions for any website, delivered your way
+            </p>
+          </div>
+          
+          <div class="glass-card p-8 animate-slide-up delay-400 group hover:scale-105 transition-transform rounded-xl">
+            <div class="flex justify-center mb-6">
+              <div class="p-3 rounded-full bg-secondary-500/20 group-hover:scale-110 transition-transform">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-secondary-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/>
+                </svg>
+              </div>
+            </div>
+            <h3 class="font-semibold text-xl mb-3 text-white">Zero Code Needed</h3>
+            <p class="text-gray-300 leading-relaxed">
+              No technical expertise required — we handle everything
+            </p>
+          </div>
+          
+          <div class="glass-card p-8 animate-slide-up delay-500 group hover:scale-105 transition-transform rounded-xl">
+            <div class="flex justify-center mb-6">
+              <div class="p-3 rounded-full bg-primary-500/20 group-hover:scale-110 transition-transform">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-primary-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                </svg>
+              </div>
+            </div>
+            <h3 class="font-semibold text-xl mb-3 text-white">Lightning Fast</h3>
+            <p class="text-gray-300 leading-relaxed">
+              Quick turnaround times with regular updates
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trusted By Section -->
+  <section class="py-20 bg-gradient-to-b from-gray-950 to-gray-900 text-white relative overflow-hidden">
+    <div class="absolute inset-0 bg-mesh-gradient opacity-20"></div>
+    <div class="absolute inset-0 bg-hero-pattern opacity-5"></div>
+    
+    <div class="container mx-auto px-4 md:px-6 relative">
+      <div class="text-center mb-16">
+        <span class="inline-block animate-float mb-4">
+          <span class="px-6 py-2 rounded-full glass-card text-white/90 text-sm font-medium inline-flex items-center gap-2 shadow-glow">
+            <span class="w-2 h-2 rounded-full bg-accent-400 animate-pulse"></span>
+            Trusted By Industry Leaders
+          </span>
+        </span>
+        <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+          Powering Data-Driven
+          <span class="block mt-4 bg-gradient-to-r from-primary-400 to-secondary-400 bg-clip-text text-transparent">
+            Success Stories
+          </span>
+        </h2>
+        <p class="text-xl text-gray-300 max-w-2xl mx-auto">
+          Join hundreds of companies using our web scraping services to drive growth and innovation
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 max-w-5xl mx-auto mb-16">
+        <div class="flex flex-col items-center group">
+          <div class="glass-card p-6 rounded-2xl mb-4 transition-all duration-300 group-hover:scale-110">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 md:h-14 md:w-14 text-primary-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+              <line x1="8" y1="21" x2="16" y2="21"/>
+              <line x1="12" y1="17" x2="12" y2="21"/>
+            </svg>
+          </div>
+          <span class="text-white font-medium text-lg">TechCorp</span>
+          <span class="text-primary-400 text-sm mt-1">Enterprise Solutions</span>
+        </div>
+        
+        <div class="flex flex-col items-center group">
+          <div class="glass-card p-6 rounded-2xl mb-4 transition-all duration-300 group-hover:scale-110">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 md:h-14 md:w-14 text-primary-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+              <polyline points="9 22 9 12 15 12 15 22"/>
+            </svg>
+          </div>
+          <span class="text-white font-medium text-lg">DataMiners</span>
+          <span class="text-primary-400 text-sm mt-1">Analytics Platform</span>
+        </div>
+        
+        <div class="flex flex-col items-center group">
+          <div class="glass-card p-6 rounded-2xl mb-4 transition-all duration-300 group-hover:scale-110">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 md:h-14 md:w-14 text-primary-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+              <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+            </svg>
+          </div>
+          <span class="text-white font-medium text-lg">GrowthInc</span>
+          <span class="text-primary-400 text-sm mt-1">Market Research</span>
+        </div>
+        
+        <div class="flex flex-col items-center group">
+          <div class="glass-card p-6 rounded-2xl mb-4 transition-all duration-300 group-hover:scale-110">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 md:h-14 md:w-14 text-primary-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="20" x2="18" y2="10"/>
+              <line x1="12" y1="20" x2="12" y2="4"/>
+              <line x1="6" y1="20" x2="6" y2="14"/>
+            </svg>
+          </div>
+          <span class="text-white font-medium text-lg">AnalyticsPlus</span>
+          <span class="text-primary-400 text-sm mt-1">Business Intelligence</span>
+        </div>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto pt-8 border-t border-gray-800">
+        <div class="glass-card p-6 rounded-xl flex items-center justify-center gap-3 group hover:scale-105 transition-all">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-primary-400 group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+            <polyline points="22 4 12 14.01 9 11.01"/>
+          </svg>
+          <div class="text-left">
+            <div class="text-2xl font-bold text-white">500+</div>
+            <div class="text-primary-300">Projects Delivered</div>
+          </div>
+        </div>
+        
+        <div class="glass-card p-6 rounded-xl flex items-center justify-center gap-3 group hover:scale-105 transition-all">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-primary-400 group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+          <div class="text-left">
+            <div class="text-2xl font-bold text-white">250+</div>
+            <div class="text-primary-300">Happy Clients</div>
+          </div>
+        </div>
+        
+        <div class="glass-card p-6 rounded-xl flex items-center justify-center gap-3 group hover:scale-105 transition-all">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-primary-400 group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="20" x2="18" y2="10"/>
+            <line x1="12" y1="20" x2="12" y2="4"/>
+            <line x1="6" y1="20" x2="6" y2="14"/>
+          </svg>
+          <div class="text-left">
+            <div class="text-2xl font-bold text-white">99.9%</div>
+            <div class="text-primary-300">Data Accuracy</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Use Cases Section -->
+  <section id="use-cases" class="py-20 md:py-32 bg-gradient-to-b from-gray-950 to-gray-900 text-white relative overflow-hidden">
+    <div class="absolute inset-0 bg-mesh-gradient opacity-20"></div>
+    <div class="absolute inset-0 bg-hero-pattern opacity-5"></div>
+    
+    <div class="container mx-auto px-4 md:px-6 relative">
+      <div class="text-center mb-16">
+        <span class="inline-block animate-float mb-4">
+          <span class="px-6 py-2 rounded-full glass-card text-white/90 text-sm font-medium inline-flex items-center gap-2 shadow-glow">
+            <span class="w-2 h-2 rounded-full bg-accent-400 animate-pulse"></span>
+            Powerful Use Cases
+          </span>
+        </span>
+        <h2 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+          Turn Web Data Into Your
+          <span class="block mt-4 bg-gradient-to-r from-primary-400 to-secondary-400 bg-clip-text text-transparent">
+            Competitive Edge
+          </span>
+        </h2>
+        <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+          From market research to competitive analysis, our web scraping services
+          help you make data-driven decisions faster and more effectively.
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        <!-- Use Case Cards -->
+        <div class="glass-card p-8 rounded-xl hover:scale-105 transition-all duration-300">
+          <div class="mb-6 bg-primary-900/30 w-16 h-16 rounded-xl flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-primary-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-semibold mb-4 text-white">
+            Lead Generation & Enrichment
+          </h3>
+          <p class="text-gray-300 leading-relaxed">
+            Build targeted prospect lists with enriched data from LinkedIn, company websites, and professional networks.
+          </p>
+        </div>
+
+        <div class="glass-card p-8 rounded-xl hover:scale-105 transition-all duration-300">
+          <div class="mb-6 bg-primary-900/30 w-16 h-16 rounded-xl flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-primary-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+              <polyline points="9 22 9 12 15 12 15 22"/>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-semibold mb-4 text-white">
+            Real Estate Analytics
+          </h3>
+          <p class="text-gray-300 leading-relaxed">
+            Track property listings, analyze market trends, and identify investment opportunities.
+          </p>
+        </div>
+
+        <div class="glass-card p-8 rounded-xl hover:scale-105 transition-all duration-300">
+          <div class="mb-6 bg-primary-900/30 w-16 h-16 rounded-xl flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-primary-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="20" x2="18" y2="10"/>
+              <line x1="12" y1="20" x2="12" y2="4"/>
+              <line x1="6" y1="20" x2="6" y2="14"/>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-semibold mb-4 text-white">
+            Competitive Intelligence
+          </h3>
+          <p class="text-gray-300 leading-relaxed">
+            Monitor competitor pricing, product launches, and market positioning.
+          </p>
+        </div>
+
+        <!-- Additional Use Cases -->
+        <div class="glass-card p-8 rounded-xl hover:scale-105 transition-all duration-300">
+          <div class="mb-6 bg-primary-900/30 w-16 h-16 rounded-xl flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-primary-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"/>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-semibold mb-4 text-white">
+            Market Research & Analysis
+          </h3>
+          <p class="text-gray-300 leading-relaxed">
+            Gather consumer sentiment, product reviews, and market trends data.
+          </p>
+        </div>
+
+        <div class="glass-card p-8 rounded-xl hover:scale-105 transition-all duration-300">
+          <div class="mb-6 bg-primary-900/30 w-16 h-16 rounded-xl flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-primary-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <polyline points="14 2 14 8 20 8"/>
+              <line x1="16" y1="13" x2="8" y2="13"/>
+              <line x1="16" y1="17" x2="8" y2="17"/>
+              <polyline points="10 9 9 9 8 9"/>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-semibold mb-4 text-white">
+            Content & Research
+          </h3>
+          <p class="text-gray-300 leading-relaxed">
+            Automate data collection for research papers and market reports.
+          </p>
+        </div>
+
+        <div class="glass-card p-8 rounded-xl hover:scale-105 transition-all duration-300">
+          <div class="mb-6 bg-primary-900/30 w-16 h-16 rounded-xl flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-primary-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="12" y1="1" x2="12" y2="23"/>
+            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-semibold mb-4 text-white">
+            Dynamic Pricing Strategy
+          </h3>
+          <p class="text-gray-300 leading-relaxed">
+            Track competitor prices and optimize your pricing strategy.
+          </p>
+        </div>
+      </div>
+      
+      <div class="text-center mt-16">
+        <p class="text-gray-300 text-lg mb-8">
+          Need a custom solution? We specialize in building tailored data extraction
+          pipelines for unique business requirements.
+        </p>
+        <a 
+          href="#order" 
+          class="inline-flex items-center bg-accent-500 hover:bg-accent-600 text-white px-8 py-4 rounded-xl font-medium text-lg transition-all group hover:scale-105 hover:shadow-glow"
+        >
+          Start Your Data Project
+          <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits Section -->
+  <section class="py-20 md:py-32 bg-gradient-to-b from-gray-950 to-gray-900 text-white relative overflow-hidden">
+    <div class="absolute inset-0 bg-mesh-gradient opacity-20"></div>
+    <div class="absolute inset-0 bg-hero-pattern opacity-5"></div>
+    
+    <div class="container mx-auto px-4 md:px-6 relative">
+      <div class="max-w-3xl mx-auto text-center mb-16">
+        <span class="inline-block animate-float mb-4">
+          <span class="px-6 py-2 rounded-full glass-card text-white/90 text-sm font-medium inline-flex items-center gap-2 shadow-glow">
+            <span class="w-2 h-2 rounded-full bg-accent-400 animate-pulse"></span>
+            Why Choose Us
+          </span>
+        </span>
+        <h2 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+          Professional Web Scraping
+          <span class="block mt-4 bg-gradient-to-r from-primary-400 to-secondary-400 bg-clip-text text-transparent">
+            Made Simple
+          </span>
+        </h2>
+        <p class="text-xl text-gray-300">
+          Focus on using your data instead of struggling to collect it.
+          Our expert team handles all the technical complexities.
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        <!-- Benefit Cards -->
+        <div class="glass-card p-8 rounded-xl hover:scale-105 transition-all duration-300">
+          <div class="mb-6 bg-primary-900/30 w-16 h-16 rounded-xl flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-primary-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="12" y1="1" x2="12" y2="23"/>
+              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-semibold mb-4 text-white">
+            Cost-Effective Solution
+          </h3>
+          <p class="text-gray-300 leading-relaxed">
+            Save up to 70% compared to building and maintaining your own scraping infrastructure.
+          </p>
+        </div>
+
+        <div class="glass-card p-8 rounded-xl hover:scale-105 transition-all duration-300">
+          <div class="mb-6 bg-primary-900/30 w-16 h-16 rounded-xl flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-primary-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-semibold mb-4 text-white">
+            Zero Technical Expertise
+          </h3>
+          <p class="text-gray-300 leading-relaxed">
+            No coding skills required. We handle everything from extraction to delivery.
+          </p>
+        </div>
+
+        <div class="glass-card p-8 rounded-xl hover:scale-105 transition-all duration-300">
+          <div class="mb-6 bg-primary-900/30 w-16 h-16 rounded-xl flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-primary-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12 6 12 12 16 14"/>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-semibold mb-4 text-white">
+            Rapid Delivery
+          </h3>
+          <p class="text-gray-300 leading-relaxed">
+            Get your data quickly with our optimized processes.
+          </p>
+        </div>
+
+        <!-- Additional Benefits -->
+        <div class="glass-card p-8 rounded-xl hover:scale-105 transition-all duration-300">
+          <div class="mb-6 bg-primary-900/30 w-16 h-16 rounded-xl flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-primary-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="3"/>
+              <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-semibold mb-4 text-white">
+            Custom Solutions
+          </h3>
+          <p class="text-gray-300 leading-relaxed">
+            Every project is tailored to your specific needs and requirements.
+          </p>
+        </div>
+
+        <div class="glass-card p-8 rounded-xl hover:scale-105 transition-all duration-300">
+          <div class="mb-6 bg-primary-900/30 w-16 h-16 rounded-xl flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-primary-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <polyline points="14 2 14 8 20 8"/>
+              <line x1="16" y1="13" x2="8" y2="13"/>
+              <line x1="16" y1="17" x2="8" y2="17"/>
+              <polyline points="10 9 9 9 8 9"/>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-semibold mb-4 text-white">
+            Flexible Data Formats
+          </h3>
+          <p class="text-gray-300 leading-relaxed">
+            Receive data in your preferred format: Excel, CSV, JSON, or custom formats.
+          </p>
+        </div>
+
+        <div class="glass-card p-8 rounded-xl hover:scale-105 transition-all duration-300">
+          <div class="mb-6 bg-primary-900/30 w-16 h-16 rounded-xl flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-primary-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <ellipse cx="12" cy="5" rx="9" ry="3"/>
+              <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/>
+              <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-semibold mb-4 text-white">
+            Advanced Capabilities
+          </h3>
+          <p class="text-gray-300 leading-relaxed">
+            Handle complex scenarios including login-protected areas and CAPTCHAs.
+          </p>
+        </div>
+      </div>
+      
+      <div class="text-center mt-16">
+        <p class="text-gray-300 text-lg mb-8">
+          Ready to transform your data collection process?
+        </p>
+        <a 
+          href="#order" 
+          class="inline-flex items-center bg-accent-500 hover:bg-accent-600 text-white px-8 py-4 rounded-xl font-medium text-lg transition-all group hover:scale-105 hover:shadow-glow"
+        >
+          Start Your Data Project
+          <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section class="py-20 md:py-32 bg-gradient-to-b from-gray-950 to-gray-900 relative overflow-hidden">
+    <div class="absolute inset-0 bg-mesh-gradient opacity-20"></div>
+    <div class="absolute inset-0 bg-hero-pattern opacity-5"></div>
+    
+    <div class="container mx-auto px-4 md:px-6 relative">
+      <div class="max-w-3xl mx-auto text-center mb-16">
+        <span class="inline-block animate-float mb-4">
+          <span class="px-6 py-2 rounded-full glass-card text-white/90 text-sm font-medium inline-flex items-center gap-2 shadow-glow">
+            <span class="w-2 h-2 rounded-full bg-accent-400 animate-pulse"></span>
+            Simple Process
+          </span>
+        </span>
+        <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white leading-tight">
+          How Our Web Scraping
+          <span class="block mt-4 bg-gradient-to-r from-primary-400 to-secondary-400 bg-clip-text text-transparent">
+            Service Works
+          </span>
+        </h2>
+        <p class="text-xl text-gray-300">
+          A streamlined process to get you from data requirements to actionable insights
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+        <!-- Step 1 -->
+        <div class="relative group">
+          <div class="hidden lg:block absolute top-24 left-full w-full h-[2px] bg-primary-700/50 -z-10">
+            <div class="absolute right-0 top-1/2 transform -translate-y-1/2 -translate-x-1/2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-primary-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </div>
+          </div>
+          
+          <div class="glass-card p-8 h-full transition-all duration-300 hover:transform hover:-translate-y-2 hover:bg-gray-800/30">
+            <div class="flex justify-center mb-8">
+              <div class="relative">
+                <div class="absolute inset-0 bg-primary-500/20 rounded-2xl blur-xl"></div>
+                <div class="relative bg-primary-900/50 w-24 h-24 rounded-2xl flex items-center justify-center transform transition-transform group-hover:scale-110">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-primary-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+            
+            <h3 class="text-2xl font-semibold mb-4 text-white text-center">
+              Share Requirements
+            </h3>
+            <p class="text-gray-300 mb-6 text-center">
+              Tell us what data you need and from where. We'll analyze and suggest the best approach.
+            </p>
+            
+            <ul class="space-y-3">
+              <li class="flex items-center text-gray-300">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-primary-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                  <polyline points="22 4 12 14.01 9 11.01"/>
+                </svg>
+                <span>Detailed project scoping</span>
+              </li>
+              <li class="flex items-center text-gray-300">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-primary-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                  <polyline points="22 4 12 14.01 9 11.01"/>
+                </svg>
+                <span>Technical feasibility</span>
+              </li>
+              <li class="flex items-center text-gray-300">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-primary-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                  <polyline points="22 4 12 14.01 9 11.01"/>
+                </svg>
+                <span>Solution design</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="relative group">
+          <div class="hidden lg:block absolute top-24 left-full w-full h-[2px] bg-primary-700/50 -z-10">
+            <div class="absolute right-0 top-1/2 transform -translate-y-1/2 -translate-x-1/2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-primary-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </div>
+          </div>
+          
+          <div class="glass-card p-8 h-full transition-all duration-300 hover:transform hover:-translate-y-2 hover:bg-gray-800/30">
+            <div class="flex justify-center mb-8">
+              <div class="relative">
+                <div class="absolute inset-0 bg-primary-500/20 rounded-2xl blur-xl"></div>
+                <div class="relative bg-primary-900/50 w-24 h-24 rounded-2xl flex items-center justify-center transform transition-transform group-hover:scale-110">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-primary-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                    <polyline points="14 2 14 8 20 8"/>
+                    <line x1="16" y1="13" x2="8" y2="13"/>
+                    <line x1="16" y1="17" x2="8" y2="17"/>
+                    <polyline points="10 9 9 9 8 9"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+            
+            <h3 class="text-2xl font-semibold mb-4 text-white text-center">
+              Get Custom Plan
+            </h3>
+            <p class="text-gray-300 mb-6 text-center">
+              Receive a tailored proposal with clear pricing and timeline.
+            </p>
+            
+            <ul class="space-y-3">
+              <li class="flex items-center text-gray-300">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-primary-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                  <polyline points="22 4 12 14.01 9 11.01"/>
+                </svg>
+                <span>Transparent pricing</span>
+              </li>
+              <li class="flex items-center text-gray-300">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-primary-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                  <polyline points="22 4 12 14.01 9 11.01"/>
+                </svg>
+                <span>Detailed timeline</span>
+              </li>
+              <li class="flex items-center text-gray-300">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-primary-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                  <polyline points="22 4 12 14.01 9 11.01"/>
+                </svg>
+                <span>Clear deliverables</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="relative group">
+          <div class="hidden lg:block absolute top-24 left-full w-full h-[2px] bg-primary-700/50 -z-10">
+            <div class="absolute right-0 top-1/2 transform -translate-y-1/2 -translate-x-1/2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-primary-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </div>
+          </div>
+          
+          <div class="glass-card p-8 h-full transition-all duration-300 hover:transform hover:-translate-y-2 hover:bg-gray-800/30">
+            <div class="flex justify-center mb-8">
+              <div class="relative">
+                <div class="absolute inset-0 bg-primary-500/20 rounded-2xl blur-xl"></div>
+                <div class="relative bg-primary-900/50 w-24 h-24 rounded-2xl flex items-center justify-center transform transition-transform group-hover:scale-110">
+              
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-primary-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"/>
+                    <polyline points="12 6 12 12 16 14"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+            
+            <h3 class="text-2xl font-semibold mb-4 text-white text-center">
+              Development & Testing
+            </h3>
+            <p class="text-gray-300 mb-6 text-center">
+              We build and test your custom scraper, ensuring reliable data extraction.
+            </p>
+            
+            <ul class="space-y-3">
+              <li class="flex items-center text-gray-300">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-primary-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                  <polyline points="22 4 12 14.01 9 11.01"/>
+                </svg>
+                <span>Quality assurance</span>
+              </li>
+              <li class="flex items-center text-gray-300">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-primary-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                  <polyline points="22 4 12 14.01 9 11.01"/>
+                </svg>
+                <span>Error handling</span>
+              </li>
+              <li class="flex items-center text-gray-300">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-primary-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                  <polyline points="22 4 12 14.01 9 11.01"/>
+                </svg>
+                <span>Performance tuning</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="relative group">
+          <div class="glass-card p-8 h-full transition-all duration-300 hover:transform hover:-translate-y-2 hover:bg-gray-800/30">
+            <div class="flex justify-center mb-8">
+              <div class="relative">
+                <div class="absolute inset-0 bg-primary-500/20 rounded-2xl blur-xl"></div>
+                <div class="relative bg-primary-900/50 w-24 h-24 rounded-2xl flex items-center justify-center transform transition-transform group-hover:scale-110">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-primary-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <ellipse cx="12" cy="5" rx="9" ry="3"/>
+                    <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/>
+                    <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+            
+            <h3 class="text-2xl font-semibold mb-4 text-white text-center">
+              Receive Clean Data
+            </h3>
+            <p class="text-gray-300 mb-6 text-center">
+              Get your data in your preferred format, ready for analysis.
+            </p>
+            
+            <ul class="space-y-3">
+              <li class="flex items-center text-gray-300">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-primary-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                  <polyline points="22 4 12 14.01 9 11.01"/>
+                </svg>
+                <span>Structured formats</span>
+              </li>
+              <li class="flex items-center text-gray-300">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-primary-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                  <polyline points="22 4 12 14.01 9 11.01"/>
+                </svg>
+                <span>Data validation</span>
+              </li>
+              <li class="flex items-center text-gray-300">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-primary-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                  <polyline points="22 4 12 14.01 9 11.01"/>
+                </svg>
+                <span>Regular updates</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="mt-16 text-center">
+        <p class="text-gray-300 text-lg mb-8">
+          Ready to start your data extraction project?
+        </p>
+        <a 
+          href="#order" 
+          class="inline-flex items-center bg-accent-500 hover:bg-accent-600 text-white px-8 py-4 rounded-xl font-medium text-lg transition-all group hover:scale-105 hover:shadow-glow"
+        >
+          Start Your Project Now
+          <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section id="pricing" class="py-20 md:py-32 bg-gradient-to-b from-gray-950 to-gray-900 relative overflow-hidden">
+    <div class="absolute inset-0 bg-mesh-gradient opacity-20"></div>
+    <div class="absolute inset-0 bg-hero-pattern opacity-5"></div>
+    
+    <div class="container mx-auto px-4 md:px-6 relative">
+      <div class="max-w-3xl mx-auto text-center mb-16">
+        <span class="inline-block animate-float mb-4">
+          <span class="px-6 py-2 rounded-full glass-card text-white/90 text-sm font-medium inline-flex items-center gap-2 shadow-glow">
+            <span class="w-2 h-2 rounded-full bg-accent-400 animate-pulse"></span>
+            Flexible Pricing
+          </span>
+        </span>
+        <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white leading-tight">
+          Professional Web Scraping
+          <span class="block mt-4 bg-gradient-to-r from-primary-400 to-secondary-400 bg-clip-text text-transparent">
+            That Fits Your Needs
+          </span>
+        </h2>
+        <p class="text-xl text-gray-300">
+          Get exactly the data you need with our custom scraping solutions.
+          No hidden fees, no long-term contracts.
+        </p>
+      </div>
+      
+      <div class="max-w-5xl mx-auto">
+        <div class="glass-card rounded-3xl overflow-hidden transform transition-all hover:scale-[1.02] duration-300">
+          <div class="bg-gradient-to-r from-primary-600/20 to-primary-700/20 backdrop-blur-sm py-8 px-8 md:px-12 border-b border-primary-700/30">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+              <div>
+                <h3 class="text-3xl font-bold mb-2 text-white">Custom Web Scraping</h3>
+                <p class="text-primary-300 text-lg">Tailored to your specific requirements</p>
+              </div>
+              <div class="text-right">
+                <div class="text-4xl font-bold text-white">from $395</div>
+                <p class="text-primary-300">per project</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="p-8 md:p-12">
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+              <div>
+                <h4 class="flex items-center text-xl font-semibold mb-4 text-white">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary-400 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                  </svg>
+                  Project Guarantees
+                </h4>
+                <ul class="space-y-4">
+                  <li class="flex items-start">
+                    <div class="flex-shrink-0 p-1 bg-primary-900/30 rounded-full mr-3 mt-1">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-primary-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                        <polyline points="22 4 12 14.01 9 11.01"/>
+                      </svg>
+                    </div>
+                    <span class="text-gray-300">
+                      <strong class="text-white">100% data accuracy</strong> guaranteed
+                    </span>
+                  </li>
+                  <li class="flex items-start">
+                    <div class="flex-shrink-0 p-1 bg-primary-900/30 rounded-full mr-3 mt-1">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-primary-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                        <polyline points="22 4 12 14.01 9 11.01"/>
+                      </svg>
+                    </div>
+                    <span class="text-gray-300">
+                      <strong class="text-white">Dedicated support</strong> throughout
+                    </span>
+                  </li>
+                  <li class="flex items-start">
+                    <div class="flex-shrink-0 p-1 bg-primary-900/30 rounded-full mr-3 mt-1">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-primary-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                        <polyline points="22 4 12 14.01 9 11.01"/>
+                      </svg>
+                    </div>
+                    <span class="text-gray-300">
+                      <strong class="text-white">Money-back guarantee</strong>
+                    </span>
+                  </li>
+                </ul>
+              </div>
+              
+              <div>
+                <h4 class="flex items-center text-xl font-semibold mb-4 text-white">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary-400 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"/>
+                    <polyline points="12 6 12 12 16 14"/>
+                  </svg>
+                  Delivery Options
+                </h4>
+                <ul class="space-y-4">
+                  <li class="flex items-start">
+                    <div class="flex-shrink-0 p-1 bg-primary-900/30 rounded-full mr-3 mt-1">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-primary-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                        <polyline points="22 4 12 14.01 9 11.01"/>
+                      </svg>
+                    </div>
+                    <span class="text-gray-300">
+                      <strong class="text-white">One-time extraction</strong>
+                    </span>
+                  </li>
+                  <li class="flex items-start">
+                    <div class="flex-shrink-0 p-1 bg-primary-900/30 rounded-full mr-3 mt-1">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-primary-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                        <polyline points="22 4 12 14.01 9 11.01"/>
+                      </svg>
+                    </div>
+                    <span class="text-gray-300">
+                      <strong class="text-white">Scheduled updates</strong>
+                    </span>
+                  </li>
+                  <li class="flex items-start">
+                    <div class="flex-shrink-0 p-1 bg-primary-900/30 rounded-full mr-3 mt-1">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-primary-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                        <polyline points="22 4 12 14.01 9 11.01"/>
+                      </svg>
+                    </div>
+                    <span class="text-gray-300">
+                      <strong class="text-white">Real-time monitoring</strong>
+                    </span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="glass-card p-8 mb-8">
+              <h4 class="flex items-center text-xl font-semibold mb-6 text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary-400 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                </svg>
+                Advanced Features Included
+              </h4>
+              <div class="grid md:grid-cols-2 gap-4">
+                <div class="flex items-start">
+                  <div class="flex-shrink-0 p-1 bg-primary-900/30 rounded-full mr-3 mt-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-primary-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                      <polyline points="22 4 12 14.01 9 11.01"/>
+                    </svg>
+                  </div>
+                  <span class="text-gray-300">Handle complex JavaScript content</span>
+                </div>
+                <div class="flex items-start">
+                  <div class="flex-shrink-0 p-1 bg-primary-900/30 rounded-full mr-3 mt-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-primary-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                      <polyline points="22 4 12 14.01 9 11.01"/>
+                    </svg>
+                  </div>
+                  <span class="text-gray-300">Bypass CAPTCHAs</span>
+                </div>
+                <div class="flex items-start">
+                  <div class="flex-shrink-0 p-1 bg-primary-900/30 rounded-full mr-3 mt-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-primary-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                      <polyline points="22 4 12 14.01 9 11.01"/>
+                    </svg>
+                  </div>
+                  <span class="text-gray-300">Handle login-protected areas</span>
+                </div>
+                <div class="flex items-start">
+                  <div class="flex-shrink-0 p-1 bg-primary-900/30 rounded-full mr-3 mt-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-primary-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                      <polyline points="22 4 12 14.01 9 11.01"/>
+                    </svg>
+                  </div>
+                  <span class="text-gray-300">Custom data formatting</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="text-center">
+              <p class="text-gray-300 mb-6">
+                Get a custom quote based on your specific requirements.
+                Volume discounts available for larger projects.
+              </p>
+              <a 
+                href="#order" 
+                class="inline-flex items-center bg-accent-500 hover:bg-accent-600 text-white px-8 py-4 rounded-xl font-medium text-lg transition-all group hover:scale-105 hover:shadow-glow"
+              >
+                Get Your Custom Quote
+                <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Order Form Section -->
+  <section id="order" class="py-20 md:py-32 bg-gradient-to-b from-gray-950 to-gray-900 relative overflow-hidden">
+    <div class="absolute inset-0 bg-mesh-gradient opacity-20"></div>
+    <div class="absolute inset-0 bg-hero-pattern opacity-5"></div>
+    
+    <div class="container mx-auto px-4 md:px-6 relative">
+      <div class="max-w-5xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <!-- Left Column - Text Content -->
+          <div>
+            <span class="inline-block animate-float mb-4">
+              <span class="px-6 py-2 rounded-full glass-card text-white/90 text-sm font-medium inline-flex items-center gap-2 shadow-glow">
+                <span class="w-2 h-2 rounded-full bg-accent-400 animate-pulse"></span>
+                Start Your Project
+              </span>
+            </span>
+            <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white">
+              Get Your Data
+              <span class="block mt-4 bg-gradient-to-r from-primary-400 to-secondary-400 bg-clip-text text-transparent">
+                Collection Started
+              </span>
+            </h2>
+            <p class="text-xl text-gray-300 mb-8">
+              Tell us what data you need and we'll get back to you with your project's cost and timeline.
+              No strings attached.
+            </p>
+            
+            <div class="glass-card p-6 rounded-lg mb-8">
+              <h3 class="text-xl font-semibold mb-4 text-white">
+                What happens next?
+              </h3>
+              <ol class="space-y-4">
+                <li class="flex">
+                  <span class="flex-shrink-0 flex items-center justify-center bg-primary-900/50 text-primary-400 font-semibold rounded-full w-8 h-8 mr-3">
+                    1
+                  </span>
+                  <span class="text-gray-300 pt-1">
+                    We'll review your requirements and get back to you within 24 hours
+                  </span>
+                </li>
+                <li class="flex">
+                  <span class="flex-shrink-0 flex items-center justify-center bg-primary-900/50 text-primary-400 font-semibold rounded-full w-8 h-8 mr-3">
+                    2
+                  </span>
+                  <span class="text-gray-300 pt-1">
+                    You'll receive a customized quote based on your project's scope
+                  </span>
+                </li>
+                <li class="flex">
+                  <span class="flex-shrink-0 flex items-center justify-center bg-primary-900/50 text-primary-400 font-semibold rounded-full w-8 h-8 mr-3">
+                    3
+                  </span>
+                  <span class="text-gray-300 pt-1">
+                    Once approved, we'll start building your custom scraper
+                  </span>
+                </li>
+                <li class="flex">
+                  <span class="flex-shrink-0 flex items-center justify-center bg-primary-900/50 text-primary-400 font-semibold rounded-full w-8 h-8 mr-3">
+                    4
+                  </span>
+                  <span class="text-gray-300 pt-1">
+                    You'll receive your structured data in your preferred format
+                  </span>
+                </li>
+              </ol>
+            </div>
+            
+            <div class="glass-card p-6 rounded-lg">
+              <h3 class="text-lg font-semibold mb-2 text-white">
+                Need help or have questions?
+              </h3>
+              <p class="text-gray-300">
+                Email us directly at <a href="mailto:support@scrape-labs.com" class="text-primary-400 hover:text-primary-300 font-medium">support@scrape-labs.com</a>
+              </p>
+            </div>
+          </div>
+          
+          <!-- Right Column - Form -->
+          <div class="glass-card p-8 rounded-xl">
+            <h3 class="text-2xl font-semibold mb-6 text-white">
+              Tell us about your project
+            </h3>
+
+            <div id="form-messages"></div>
+            
+            <div id="contact-form">
+              <%= render partial: "landing_page/form", locals: { contact: @contact } %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq" class="py-20 md:py-32 bg-gradient-to-b from-gray-950 to-gray-900 relative overflow-hidden">
+    <div class="absolute inset-0 bg-mesh-gradient opacity-20"></div>
+    <div class="absolute inset-0 bg-hero-pattern opacity-5"></div>
+    
+    <div class="container mx-auto px-4 md:px-6 relative">
+      <div class="max-w-3xl mx-auto text-center mb-16">
+        <span class="inline-block animate-float mb-4">
+          <span class="px-6 py-2 rounded-full glass-card text-white/90 text-sm font-medium inline-flex items-center gap-2 shadow-glow">
+            <span class="w-2 h-2 rounded-full bg-accent-400 animate-pulse"></span>
+            Common Questions
+          </span>
+        </span>
+        <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white">
+          Frequently Asked
+          <span class="block mt-4 bg-gradient-to-r from-primary-400 to-secondary-400 bg-clip-text text-transparent">
+            Questions
+          </span>
+        </h2>
+        <p class="text-xl text-gray-300">
+          Everything you need to know about our web scraping services
+        </p>
+      </div>
+      
+      <div class="max-w-3xl mx-auto space-y-4">
+        <!-- FAQ Items -->
+        <div class="faq-item glass-card overflow-hidden transition-all duration-300 hover:bg-gray-800/30">
+          <button class="w-full text-left p-6 focus:outline-none" onclick="toggleFAQ(this)">
+            <div class="flex justify-between items-center">
+              <h3 class="text-lg font-semibold text-white">What does the price depend on?</h3>
+              <svg class="w-5 h-5 text-gray-400 transform transition-transform faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </div>
+          </button>
+          <div class="faq-answer">
+            <div class="p-6 pt-0 text-gray-300">
+              The price depends on website complexity and the amount of data you need scraped. More complex websites with advanced protection measures and larger data volumes will cost more than simpler projects.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item glass-card overflow-hidden transition-all duration-300 hover:bg-gray-800/30">
+          <button class="w-full text-left p-6 focus:outline-none" onclick="toggleFAQ(this)">
+            <div class="flex justify-between items-center">
+              <h3 class="text-lg font-semibold text-white">When will I get my data?</h3>
+              <svg class="w-5 h-5 text-gray-400 transform transition-transform faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </div>
+          </button>
+          <div class="faq-answer">
+            <div class="p-6 pt-0 text-gray-300">
+              Delivery time depends on your project's requirements. Simple projects can be delivered within 2-3 days, while more complex ones may take up to 2 weeks. We'll provide you with a specific timeline when we quote your project.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item glass-card overflow-hidden transition-all duration-300 hover:bg-gray-800/30">
+          <button class="w-full text-left p-6 focus:outline-none" onclick="toggleFAQ(this)">
+            <div class="flex justify-between items-center">
+              <h3 class="text-lg font-semibold text-white">Do you offer bulk discounts?</h3>
+              <svg class="w-5 h-5 text-gray-400 transform transition-transform faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </div>
+          </button>
+          <div class="faq-answer">
+            <div class="p-6 pt-0 text-gray-300">
+              Yes! If you want multiple websites scraped or need to run scrapers on a regular schedule, we can offer better pricing compared to one-off scraping projects. Please mention your long-term needs when requesting a quote.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item glass-card overflow-hidden transition-all duration-300 hover:bg-gray-800/30">
+          <button class="w-full text-left p-6 focus:outline-none" onclick="toggleFAQ(this)">
+            <div class="flex justify-between items-center">
+              <h3 class="text-lg font-semibold text-white">Is web scraping legal?</h3>
+              <svg class="w-5 h-5 text-gray-400 transform transition-transform faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </div>
+          </button>
+          <div class="faq-answer">
+            <div class="p-6 pt-0 text-gray-300">
+              Web scraping publicly available data is generally legal, but there are important considerations including website terms of service, copyright laws, and how the data will be used. We focus on ethical scraping practices and can provide guidance for your specific use case.
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="max-w-2xl mx-auto mt-12 text-center">
+        <p class="text-gray-300 mb-6">
+          Still have questions? We're here to help!
+        </p>
+        <a 
+          href="mailto:support@scrape-labs.com" 
+          class="inline-flex items-center bg-accent-500 hover:bg-accent-600 text-white px-8 py-4 rounded-xl font-medium text-lg transition-all group hover:scale-105 hover:shadow-glow"
+        >
+          Contact Our Support Team
+          <svg class="ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Footer -->
+<footer class="bg-gray-900 text-gray-300 pt-16 pb-10">
+  <div class="container mx-auto px-4 md:px-6">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+      <!-- Company Info -->
+      <div>
+        <div class="flex items-center mb-4">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary-400 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <ellipse cx="12" cy="5" rx="9" ry="3"/>
+            <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/>
+            <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>
+          </svg>
+          <span class="text-xl font-bold text-white">ScrapeLabs</span>
+        </div>
+        <p class="mb-4 text-gray-400">
+          Professional web scraping services that deliver the data you need, when you need it.
+          No coding required.
+        </p>
+        <div class="flex space-x-4">
+          <a href="#" class="text-gray-400 hover:text-white transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+            </svg>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-white transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+              <rect x="2" y="9" width="4" height="12"/>
+              <circle cx="4" cy="4" r="2"/>
+            </svg>
+          </a>
+          <a href="mailto:support@scrape-labs.com" class="text-gray-400 hover:text-white transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+      
+      <!-- Quick Links -->
+      <div>
+        <h3 class="text-lg font-semibold text-white mb-6">Quick Links</h3>
+        <ul class="space-y-3">
+          <li>
+            <a href="#use-cases" class="text-gray-400 hover:text-white transition-colors">Use Cases</a>
+          </li>
+          <li>
+            <a href="#pricing" class="text-gray-400 hover:text-white transition-colors">Pricing</a>
+          </li>
+          <li>
+            <a href="#faq" class="text-gray-400 hover:text-white transition-colors">FAQ</a>
+          </li>
+          <li>
+            <a href="#order" class="text-gray-400 hover:text-white transition-colors">Order Data</a>
+          </li>
+          <li>
+            <a href="#" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a>
+          </li>
+          <li>
+            <a href="#" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a>
+          </li>
+        </ul>
+      </div>
+      
+      <!-- Contact Info -->
+      <div>
+        <h3 class="text-lg font-semibold text-white mb-6">Contact Us</h3>
+        <p class="mb-2 text-gray-400">
+          Need more information? Have questions?
+        </p>
+        <a 
+          href="mailto:support@scrape-labs.com" 
+          class="text-primary-400 hover:text-primary-300 transition-colors flex items-center"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+          support@scrape-labs.com
+        </a>
+        <p class="mt-8 text-sm text-gray-500">
+          Responses typically within 24 hours, Monday through Friday.
+        </p>
+      </div>
+    </div>
+    
+    <div class="border-t border-gray-800 pt-8 text-center text-sm text-gray-500">
+      <p class="mb-2">
+        Copyright © ScrapeLabs <span id="currentYear"></span>. All rights reserved.
+      </p>
+      <p>
+        Made with ❤️ remotely in Europe
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Mobile menu toggle
+  function toggleMobileMenu() {
+    const menu = document.getElementById('mobileMenu');
+    menu.classList.toggle('hidden');
+  }
+
+  // Header scroll effect
+  window.addEventListener('scroll', () => {
+    const header = document.querySelector('header');
+    if (window.scrollY > 10) {
+      header.classList.add('bg-white', 'shadow-md', 'py-2');
+      header.classList.remove('bg-transparent', 'py-4');
+    } else {
+      header.classList.remove('bg-white', 'shadow-md', 'py-2');
+      header.classList.add('bg-transparent', 'py-4');
+    }
+  });
+
+  // FAQ toggle
+  function toggleFAQ(button) {
+    const faqItem = button.closest('.faq-item');
+    const wasActive = faqItem.classList.contains('active');
+    
+    // Close all FAQs
+    document.querySelectorAll('.faq-item').forEach(item => {
+      item.classList.remove('active');
+    });
+    
+    // Toggle current FAQ
+    if (!wasActive) {
+      faqItem.classList.add('active');
+    }
+  }
+
+  // Set current year in footer
+  document.getElementById('currentYear').textContent = new Date().getFullYear();
+</script>
