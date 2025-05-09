@@ -7,10 +7,10 @@ image: olivier86/scrapelabs
 # Deploy to these servers.
 servers:
   web:
-    - scrapelabs.com
+    - scrape-labs.com
   job:
     hosts:
-      - scrapelabs.com
+      - scrape-labs.com
     cmd: bin/jobs
 
 # Enable SSL auto certification via Let's Encrypt and allow for multiple apps on a single web server.
@@ -20,8 +20,8 @@ servers:
 proxy:
   ssl: true
   hosts:
-    - scrapelabs.com
-    - www.scrapelabs.com
+    - scrape-labs.com
+    - www.scrape-labs.com
 
 # Credentials for your image host.
 registry:
@@ -120,7 +120,7 @@ builder:
 accessories:
   db:
     image: pgvector/pgvector:pg17
-    host: cryptokey.email
+    host: scrape-labs.com
     port: "127.0.0.1:5435:5435"
     env:
       clear:
