@@ -41,7 +41,7 @@
 <!-- Header -->
 <header class="fixed w-full z-50 transition-all duration-300">
   <div class="container mx-auto px-4 md:px-6">
-    <div class="flex justify-between items-center h-20">
+    <div class="flex justify-between items-center h-16">
       <a href="#" class="flex items-center group">
         <div class="p-2 rounded-xl transition-all duration-300 group-hover:scale-110">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-primary-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -49,7 +49,7 @@
             <path d="M2 10h20"/>
           </svg>
         </div>
-        <span class="text-2xl font-bold ml-2 text-white">ScrapeLabs</span>
+        <span class="text-2xl font-bold ml-2 text-white" id="logo-text">ScrapeLabs</span>
       </a>
       
       <nav class="hidden md:flex items-center space-x-8">
@@ -1338,12 +1338,17 @@
   // Header scroll effect
   window.addEventListener('scroll', () => {
     const header = document.querySelector('header');
+    const logoText = document.getElementById('logo-text');
     if (window.scrollY > 10) {
-      header.classList.add('bg-white', 'shadow-md', 'py-2');
-      header.classList.remove('bg-transparent', 'py-4');
+      header.classList.add('bg-white', 'shadow-md');
+      header.classList.remove('bg-transparent');
+      logoText.classList.remove('text-white');
+      logoText.classList.add('text-gray-600');
     } else {
-      header.classList.remove('bg-white', 'shadow-md', 'py-2');
-      header.classList.add('bg-transparent', 'py-4');
+      header.classList.remove('bg-white', 'shadow-md');
+      header.classList.add('bg-transparent');
+      logoText.classList.remove('text-gray-600');
+      logoText.classList.add('text-white');
     }
   });
 
