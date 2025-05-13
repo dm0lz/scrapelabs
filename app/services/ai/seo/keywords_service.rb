@@ -2,7 +2,6 @@ class Ai::Seo::KeywordsService < BaseService
   def call
     keywords.each do |keyword|
       Keyword.find_or_create_by(name: keyword)
-      Ai::Seo::LongTailKeywordsService.new.call(keyword)
     end
   end
 
