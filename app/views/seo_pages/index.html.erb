@@ -1,0 +1,12 @@
+<div class="container mx-auto p-12 bg-[#1E293B] text-gray-300 rounded-lg">
+  <h1 class="text-2xl font-bold mb-4">Sitemap</h1>
+  <ul>
+    <% @seo_pages.each do |seo_page| %>
+      <li><%= link_to seo_page.slug, public_seo_page_path(id: seo_page.slug) %></li>
+    <% end %>
+  </ul>
+  <div class="my-8">
+    <%= paginate @seo_pages %>
+  </div>
+</div>
+

@@ -1,0 +1,129 @@
+<%= content_for :title, @seo_page.meta_title %>
+<%= content_for :description, @seo_page.meta_description %>
+<%= content_for :keywords, @seo_page.keyword %>
+
+<div class="min-h-screen bg-[#0F172A] text-white">
+
+  <main>
+    <section id="order" class="py-20 md:py-32 bg-gradient-to-b from-gray-950 to-gray-900 relative overflow-hidden">
+      <div class="absolute inset-0 bg-mesh-gradient opacity-20"></div>
+      <div class="absolute inset-0 bg-hero-pattern opacity-5"></div>
+      
+      <div class="container mx-auto px-4 md:px-6 relative">
+        <div class="max-w-7xl mx-auto">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <!-- Left Column - Text Content -->
+            <div>
+              <span class="inline-block animate-float mb-4">
+                <span class="px-6 py-2 rounded-full glass-card text-white/90 text-sm font-medium inline-flex items-center gap-2 shadow-glow">
+                  <span class="w-2 h-2 rounded-full bg-accent-400 animate-pulse"></span>
+                  Start Your Project
+                </span>
+              </span>
+              <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white">
+                Get Your Data
+                <span class="block mt-4 bg-gradient-to-r from-primary-400 to-secondary-400 bg-clip-text text-transparent">
+                  Collection Started
+                </span>
+              </h2>
+              <p class="text-xl text-gray-300 mb-8">
+                Tell us what data you need and we'll get back to you with your project's cost and timeline.
+                No strings attached.
+              </p>
+              
+              <div class="glass-card p-6 rounded-lg mb-8">
+                <h3 class="text-xl font-semibold mb-4 text-white">
+                  What happens next?
+                </h3>
+                <ol class="space-y-4">
+                  <li class="flex">
+                    <span class="flex-shrink-0 flex items-center justify-center bg-primary-900/50 text-primary-400 font-semibold rounded-full w-8 h-8 mr-3">
+                      1
+                    </span>
+                    <span class="text-gray-300 pt-1">
+                      We'll review your requirements and get back to you within 24 hours
+                    </span>
+                  </li>
+                  <li class="flex">
+                    <span class="flex-shrink-0 flex items-center justify-center bg-primary-900/50 text-primary-400 font-semibold rounded-full w-8 h-8 mr-3">
+                      2
+                    </span>
+                    <span class="text-gray-300 pt-1">
+                      You'll receive a customized quote based on your project's scope
+                    </span>
+                  </li>
+                  <li class="flex">
+                    <span class="flex-shrink-0 flex items-center justify-center bg-primary-900/50 text-primary-400 font-semibold rounded-full w-8 h-8 mr-3">
+                      3
+                    </span>
+                    <span class="text-gray-300 pt-1">
+                      Once approved, we'll start building your custom scraper
+                    </span>
+                  </li>
+                  <li class="flex">
+                    <span class="flex-shrink-0 flex items-center justify-center bg-primary-900/50 text-primary-400 font-semibold rounded-full w-8 h-8 mr-3">
+                      4
+                    </span>
+                    <span class="text-gray-300 pt-1">
+                      You'll receive your structured data in your preferred format
+                    </span>
+                  </li>
+                </ol>
+              </div>
+              
+              <div class="glass-card p-6 rounded-lg">
+                <h3 class="text-lg font-semibold mb-2 text-white">
+                  Need help or have questions?
+                </h3>
+                <p class="text-gray-300">
+                  Email us directly at <a href="mailto:support@scrape-labs.com" class="text-primary-400 hover:text-primary-300 font-medium">support@scrape-labs.com</a>
+                </p>
+              </div>
+            </div>
+            
+            <!-- Right Column - Form -->
+            <div class="glass-card p-8 rounded-xl">
+              <h3 class="text-2xl font-semibold mb-6 text-white">
+                Tell us about your project
+              </h3>
+
+              <div id="form-messages"></div>
+              
+              <div id="contact-form">
+                <%= render partial: "landing_page/form", locals: { contact: @contact } %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-8 bg-[#0F172A] text-gray-100" id="understanding-api-search">
+      <div class="container mx-auto px-4">
+        <div class="relative z-10">
+          <div class="prose prose-lg font-sans text-base md:text-lg text-gray-300 bg-[#0F172A] rounded-lgleading-relaxed">
+            <p><%= @seo_page.content.html_safe %></p>
+          </div>
+          <div class="mt-6 text-center border-t border-gray-600 py-12">
+            <%= link_to "#order", class: "inline-flex items-center bg-accent-500 hover:bg-accent-600 text-white px-8 py-4 rounded-xl font-medium text-lg transition-all group hover:scale-105 hover:shadow-glow" do %>
+              <span class="relative z-10">Start Your Project with ScrapeLabs</span>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<style>
+  .glass-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+  }
+  
+  .glass-card:hover {
+    background: rgba(255, 255, 255, 0.15);
+  }
+</style>
