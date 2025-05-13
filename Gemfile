@@ -33,6 +33,7 @@ gem "solid_queue"
 gem "solid_cable"
 
 gem "ruby-openai"
+gem "kaminari"
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false

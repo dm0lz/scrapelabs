@@ -1,7 +1,7 @@
 <header class="fixed w-full z-50 transition-all duration-300">
   <div class="container mx-auto px-4 md:px-6">
     <div class="flex justify-between items-center h-16">
-      <a href="#" class="flex items-center group">
+      <%= link_to root_path, class: "flex items-center group" do %>
         <div class="p-2 rounded-xl transition-all duration-300 group-hover:scale-110">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-primary-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M22 20V8a2 2 0 0 0-2-2h-7.93a2 2 0 0 1-1.66-.9l-.82-1.2A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13c0 1.1.9 2 2 2h16a2 2 0 0 0 2-2Z"/>
@@ -9,32 +9,26 @@
           </svg>
         </div>
         <span class="text-2xl font-bold ml-2 text-white" id="logo-text">ScrapeLabs</span>
-      </a>
+      <% end %>
       
       <nav class="hidden md:flex items-center space-x-8">
-        <a href="#use-cases" class="font-medium transition-all duration-300 text-gray-300 hover:text-primary-400">
-          Use Cases
-        </a>
-        <a href="#pricing" class="font-medium transition-all duration-300 text-gray-300 hover:text-primary-400">
-          Pricing
-        </a>
-        <a href="#faq" class="font-medium transition-all duration-300 text-gray-300 hover:text-primary-400">
-          FAQ
-        </a>
-        <a href="#order" class="bg-accent-500 hover:bg-accent-600 text-white px-6 py-2.5 rounded-xl font-medium transition-all hover:scale-105 hover:shadow-glow flex items-center">
-          Get Your Data
+        <%= link_to "Use Cases", root_path + "#use-cases", class: "font-medium transition-all duration-300 text-gray-300 hover:text-primary-400" %>
+        <%= link_to "Pricing", root_path + "#pricing", class: "font-medium transition-all duration-300 text-gray-300 hover:text-primary-400" %>
+        <%= link_to "FAQ", root_path + "#faq", class: "font-medium transition-all duration-300 text-gray-300 hover:text-primary-400" %>
+        <%= link_to root_path + "#order", class: "bg-accent-500 hover:bg-accent-600 text-white px-6 py-2.5 rounded-xl font-medium transition-all hover:scale-105 hover:shadow-glow flex items-center" do %>
+          Order Data
           <svg class="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
           </svg>
-        </a>
+        <% end %>
       </nav>
       <div class="flex items-center sm:hidden">
-        <a href="#order" class="bg-accent-500 hover:bg-accent-600 text-white px-6 py-2.5 rounded-xl font-medium transition-all hover:scale-105 hover:shadow-glow flex items-center">
+        <%= link_to root_path + "#order", class: "bg-accent-500 hover:bg-accent-600 text-white px-6 py-2.5 rounded-xl font-medium transition-all hover:scale-105 hover:shadow-glow flex items-center" do %>
           Get Your Data
           <svg class="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
           </svg>
-        </a>
+        <% end %>
       </div>
     </div>
   </div>
