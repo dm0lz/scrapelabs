@@ -34,8 +34,8 @@ class Ai::Seo::PageService < BaseService
       - Use text-gray-300 text color on bg-[#0F172A] background for text and background
       - Use text-gray-100 for titles and subtitles
       - use font-sans font family
-      #{pillar && "- The html must include a link to https://www.scrape-labs.com/#{pillar.parameterize}"}
-      #{!pillar && "- The html must include a link to https://www.scrape-labs.com/#order"}
+      #{pillar && "- The html must include a html link to https://www.scrape-labs.com/#{pillar.parameterize}"}
+      #{!pillar && "- The html must include a html anchor link to https://www.scrape-labs.com/#order"}
     PROMPT
   end
 
