@@ -34,6 +34,7 @@ gem "solid_cable"
 
 gem "ruby-openai"
 gem "kaminari"
+gem "sitemap_generator"
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
