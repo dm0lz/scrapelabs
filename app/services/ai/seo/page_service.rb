@@ -10,6 +10,12 @@ class Ai::Seo::PageService < BaseService
 
   # User prompt describing the task for ChatGPT to generate an SEO page
   def user_prompt(keyword, pillar = nil)
+    link_instruction =
+      if pillar.present?
+        "- The html must include a html link to https://www.scrape-labs.com/#{pillar.to_s.parameterize}"
+      else
+        "- The html must include a html anchor link to https://www.scrape-labs.com/#order"
+      end
     <<~PROMPT
       Create a well-optimized SEO page targeting the keyword "#{keyword}". 
       The page should be designed for an audience seeking information about this keyword.
@@ -34,8 +40,7 @@ class Ai::Seo::PageService < BaseService
       - Use text-gray-300 text color on bg-[#0F172A] background for text and background
       - Use text-gray-100 for titles and subtitles
       - use font-sans font family
-      #{pillar && "- The html must include a html link to https://www.scrape-labs.com/#{pillar.parameterize}"}
-      #{!pillar && "- The html must include a html anchor link to https://www.scrape-labs.com/#order"}
+      #{link_instruction}
     PROMPT
   end
 
