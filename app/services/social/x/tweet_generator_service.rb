@@ -15,18 +15,47 @@ class Social::X::TweetGeneratorService < BaseService
   private
   def user_prompt
     <<-TXT
-      Generate a tweet about the following topic (max 280 characters). Make it engaging and concise. 
-      - Include key features like pricing, speed, and unique selling points (e.g., "fast", "cheap", "API", "free credits").
-      - Add relevant emojis to highlight key points.
-      - Include the following link to my app: https://www.scrape-labs.com
-      - Suggest one relevant hashtag (e.g., #WebScraping) or create a unique hashtag.
+      Write an engaging and professional tweet (max 280 characters) promoting ScrapeLabs.
+  
+      ✦ Highlight key benefits like:
+        - AI-powered or custom web scraping
+        - Zero code required
+        - Fast turnaround
+        - High accuracy (99.9%)
+        - Competitive pricing (from $395/project)
+        - Real-time or scheduled data delivery
+  
+      ✦ Emphasize how we help businesses extract web data effortlessly for use cases like:
+        - Lead generation
+        - Market research
+        - Competitive analysis
+        - Real estate insights
+        - Dynamic pricing
+  
+      ✦ Add relevant emojis to boost engagement.
+  
+      ✦ Include this call to action and link:
+        👉 Start your project: https://www.scrape-labs.com
+  
+      ✦ Include 1 relevant or creative hashtag (e.g., #WebScraping, #DataDrivenGrowth)
+  
       Topic: #{@topic}
     TXT
   end
 
   def system_prompt
     <<-TXT
-      You are a marketing assistant. Your job is to create concise, engaging, and informative tweets. You should focus on highlighting key product features, benefits, and unique selling points in a way that appeals to a professional audience. Your tone should be friendly and helpful, and you should always include an actionable link and relevant hashtags.
+      You are a professional marketing assistant helping to promote a data services company called ScrapeLabs.
+  
+      Your job is to craft concise, engaging, and value-driven tweets targeting business users and technical leads. Focus on conveying how ScrapeLabs solves data collection challenges through custom, zero-code, AI-powered web scraping.
+  
+      Emphasize the service’s benefits: speed, simplicity, pricing, use case flexibility, and expert support. Use a tone that is confident, helpful, and business-friendly.
+  
+      Always include:
+      - A compelling hook or benefit
+      - Relevant emojis
+      - One actionable link: https://www.scrape-labs.com
+      - One relevant or creative hashtag
     TXT
   end
 

@@ -28,7 +28,7 @@ class Social::Linkedin::OauthService
     token = client.auth_code.get_token(
       auth_code,
       redirect_uri: redirect_uri,
-      client_secret: client_secret
+      # client_secret: client_secret
     )
 
     puts "Access token: #{token.token}"

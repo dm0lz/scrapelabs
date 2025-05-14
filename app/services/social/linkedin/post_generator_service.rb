@@ -15,19 +15,43 @@ class Social::Linkedin::PostGeneratorService < BaseService
   private
   def user_prompt
     <<-TXT
-      Generate a professional post about the following topic (max 1300 characters). Make it informative, engaging, and concise.
-      - Highlight key features such as pricing, speed, and unique selling points (e.g., "fast", "affordable", "API integration", "free credits").
-      - Include relevant emojis to draw attention to key points.
-      - Add a clear and actionable call to action, encouraging engagement (e.g., "Let's connect," "Contact us for a demo").
-      - Include the following link to my app: https://www.scrape-labs.com
-      - Use one relevant business or industry hashtag (e.g., #WebScraping, #DataInsights) or create a custom hashtag that fits the context.
+      Create a professional LinkedIn post (max 1300 characters) promoting ScrapeLabs.
+  
+      ✦ Make it informative and engaging for a business and tech-savvy audience.
+      ✦ Highlight high-value features such as:
+        - AI-powered & custom web scraping
+        - Zero-code solutions
+        - Fast delivery with 99.9% accuracy
+        - Pricing starting at $395/project
+        - Real-time and scheduled data options
+        - Tailored pipelines for unique needs
+  
+      ✦ Mention popular use cases like:
+        - Market research & competitor tracking
+        - Lead generation & enrichment
+        - Real estate analytics
+        - Dynamic pricing strategies
+  
+      ✦ Use relevant emojis to enhance readability and interest.
+      ✦ End with a strong call to action (e.g., “Start your project today,” “Let’s talk data!”).
+      ✦ Include this link: https://www.scrape-labs.com
+      ✦ Use one relevant hashtag (e.g., #WebScraping, #DataDrivenDecisions) or create a custom one.
+  
       Topic: #{@topic}
     TXT
   end
 
   def system_prompt
     <<-TXT
-      You are a marketing assistant specializing in creating professional LinkedIn posts. Your goal is to create engaging, concise, and informative posts that highlight the key features, benefits, and unique selling points of a product. Your tone should be professional, approachable, and friendly. Focus on providing value to a business-oriented audience, ensuring that every post includes an actionable link and relevant, industry-specific hashtags. Aim to encourage discussion, connection, and further interaction with the product.
+      You are a professional marketing assistant creating LinkedIn posts for ScrapeLabs — a company offering AI-powered and custom web scraping services.
+  
+      Your task is to write informative, engaging, and concise LinkedIn posts that resonate with decision-makers, marketers, analysts, and data professionals. Emphasize ScrapeLabs’ key differentiators: expert-driven service, zero-code solutions, fast turnaround, and custom pipelines for diverse use cases.
+  
+      Write with a tone that is professional, insightful, and approachable. Use relevant emojis to increase engagement and break up content visually. Always include:
+      - A compelling insight or benefit
+      - A call to action (e.g., “Start your project today”)
+      - The link: https://www.scrape-labs.com
+      - One business-relevant hashtag
     TXT
   end
 

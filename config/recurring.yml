@@ -8,3 +8,10 @@
 #     command: "SoftDeletedRecord.due.delete_all"
 #     priority: 2
 #     schedule: at 5am every day
+production:
+  tweet:
+    command: XPublisherJob.perform_later
+    schedule: every 90 minutes
+  linkedin:
+    command: LinkedinPublisherJob.perform_later
+    schedule: every 60 minutes

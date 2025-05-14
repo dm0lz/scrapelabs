@@ -1,6 +1,6 @@
 class Social::Linkedin::PostService < BaseService
   def call(payload)
-    person_urn = "urn:li:person:xQA0yeGIwQ" 
+    person_urn = "urn:li:person:e6HqIi62OW" 
 
     uri = URI.parse("https://api.linkedin.com/v2/ugcPosts")
 
