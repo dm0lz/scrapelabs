@@ -21,7 +21,7 @@ class Social::X::TweetGeneratorService < BaseService
         - AI-powered or custom web scraping
         - Zero code required
         - Fast turnaround
-        - High accuracy (99.9%)
+        - High accuracy (100%)
         - Competitive pricing (from $395/project)
         - Real-time or scheduled data delivery
   

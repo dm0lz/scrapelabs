@@ -21,7 +21,7 @@ class Social::Linkedin::PostGeneratorService < BaseService
       ✦ Highlight high-value features such as:
         - AI-powered & custom web scraping
         - Zero-code solutions
-        - Fast delivery with 99.9% accuracy
+        - Fast delivery with 100% accuracy
         - Pricing starting at $395/project
         - Real-time and scheduled data options
         - Tailored pipelines for unique needs
