@@ -21,7 +21,7 @@ gem "jbuilder"
 
 gem "mailgun-ruby", "~>1.3.2"
 
-gem "oauth2", "~> 1.4.0"
+gem "oauth2", "~> 2.0.11"
 
 gem "x"
 
