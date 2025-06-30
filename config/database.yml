@@ -84,7 +84,7 @@ production:
   primary: &primary_production
     <<: *default
     database: scrapelabs_production
-    username: scrapelabs
+    username: theme_astral
     password: <%= ENV["POSTGRES_PASSWORD"] %>
   cache:
     <<: *primary_production
