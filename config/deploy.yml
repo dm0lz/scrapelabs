@@ -51,7 +51,7 @@ env:
 
     # Match this to any external database server to configure Active Record correctly
     # Use scrapelabs-db for a db accessory server on same machine via local kamal docker network.
-    DB_HOST: scrapelabs-db
+    DB_HOST: theme_astral-db
 
     # Log everything from Rails
     # RAILS_LOG_LEVEL: debug
@@ -117,19 +117,19 @@ builder:
 #     port: 6379
 #     directories:
 #       - data:/data
-accessories:
-  db:
-    image: pgvector/pgvector:pg17
-    host: scrape-labs.com
-    port: "127.0.0.1:5435:5435"
-    env:
-      clear:
-        POSTGRES_USER: "scrapelabs"
-        POSTGRES_DB: "scrapelabs_production"
-        PGPORT: 5435
-      secret:
-        - POSTGRES_PASSWORD
-    files:
-      - db/production.sql:/docker-entrypoint-initdb.d/setup.sql
-    directories:
-      - data:/var/lib/postgresql/data
+# accessories:
+#   db:
+#     image: pgvector/pgvector:pg17
+#     host: scrape-labs.com
+#     port: "127.0.0.1:5435:5435"
+#     env:
+#       clear:
+#         POSTGRES_USER: "scrapelabs"
+#         POSTGRES_DB: "scrapelabs_production"
+#         PGPORT: 5435
+#       secret:
+#         - POSTGRES_PASSWORD
+#     files:
+#       - db/production.sql:/docker-entrypoint-initdb.d/setup.sql
+#     directories:
+#       - data:/var/lib/postgresql/data
