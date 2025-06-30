@@ -19,7 +19,7 @@ gem "cssbundling-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
-gem "mailgun-ruby", "~>1.3.2"
+gem "mailgun-ruby", "~>1.3.7"
 
 gem "oauth2", "~> 1.4.0"
 
